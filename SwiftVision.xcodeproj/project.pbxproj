@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E12625FD515CEAC58EDCA72 /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E12612A0AABAA0709B18064 /* ImageSource.swift */; };
+		3E126296431E49018AC9E037 /* FileImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E126EE4B5C1CECC9452E329 /* FileImageSource.swift */; };
+		3E1269F8FBB265D5B1E9111B /* CameraImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E126BF65F0428917A79B551 /* CameraImageSource.swift */; };
 		831F36641B5B936C00109C68 /* SwiftVision.h in Headers */ = {isa = PBXBuildFile; fileRef = 831F36631B5B936C00109C68 /* SwiftVision.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		831F366A1B5B936C00109C68 /* SwiftVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831F365E1B5B936C00109C68 /* SwiftVision.framework */; };
 		831F36711B5B936C00109C68 /* SwiftVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F36701B5B936C00109C68 /* SwiftVisionTests.swift */; };
+		832788981B5FA73300F0BAA0 /* SwiftImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8353853E1B5E6C37007EDC3D /* SwiftImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,15 +24,40 @@
 			remoteGlobalIDString = 831F365D1B5B936C00109C68;
 			remoteInfo = SwiftVision;
 		};
+		8353853D1B5E6C37007EDC3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 835385381B5E6C37007EDC3D /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83C490291B5E6BAB00C54BE7;
+			remoteInfo = SwiftImage;
+		};
+		8353853F1B5E6C37007EDC3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 835385381B5E6C37007EDC3D /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83C490341B5E6BAC00C54BE7;
+			remoteInfo = SwiftImageTests;
+		};
+		83F62CAF1B5F9F8F0013E410 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 835385381B5E6C37007EDC3D /* SwiftImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83C490281B5E6BAB00C54BE7;
+			remoteInfo = SwiftImage;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E12612A0AABAA0709B18064 /* ImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSource.swift; sourceTree = "<group>"; };
+		3E126BF65F0428917A79B551 /* CameraImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraImageSource.swift; sourceTree = "<group>"; };
+		3E126EE4B5C1CECC9452E329 /* FileImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileImageSource.swift; sourceTree = "<group>"; };
 		831F365E1B5B936C00109C68 /* SwiftVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831F36621B5B936C00109C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		831F36631B5B936C00109C68 /* SwiftVision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftVision.h; sourceTree = "<group>"; };
 		831F36691B5B936C00109C68 /* SwiftVisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftVisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		831F366F1B5B936C00109C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		831F36701B5B936C00109C68 /* SwiftVisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVisionTests.swift; sourceTree = "<group>"; };
+		835385381B5E6C37007EDC3D /* SwiftImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftImage.xcodeproj; path = ../SwiftImage/SwiftImage.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832788981B5FA73300F0BAA0 /* SwiftImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,9 +80,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E12625654EF72D389FA653A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E1266852F6C67DCCBD9FE3A /* Source */,
+				3E126D4071B7248EFD464717 /* Sink */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E1263448C4FB7172CE838A6 /* Process */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Process;
+			sourceTree = "<group>";
+		};
+		3E1266852F6C67DCCBD9FE3A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3E12682F80188A4D2C4F2EDA /* Impl */,
+				3E12612A0AABAA0709B18064 /* ImageSource.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3E12682F80188A4D2C4F2EDA /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				3E126EE4B5C1CECC9452E329 /* FileImageSource.swift */,
+				3E126BF65F0428917A79B551 /* CameraImageSource.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		3E126D4071B7248EFD464717 /* Sink */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sink;
+			sourceTree = "<group>";
+		};
 		831F36541B5B936B00109C68 = {
 			isa = PBXGroup;
 			children = (
+				835385371B5E6C25007EDC3D /* Dependencies */,
 				831F36601B5B936C00109C68 /* SwiftVision */,
 				831F366D1B5B936C00109C68 /* SwiftVisionTests */,
 				831F365F1B5B936C00109C68 /* Products */,
@@ -73,6 +145,8 @@
 			children = (
 				831F36631B5B936C00109C68 /* SwiftVision.h */,
 				831F36611B5B936C00109C68 /* Supporting Files */,
+				3E12625654EF72D389FA653A /* Model */,
+				3E1263448C4FB7172CE838A6 /* Process */,
 			);
 			path = SwiftVision;
 			sourceTree = "<group>";
@@ -102,6 +176,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		835385371B5E6C25007EDC3D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				835385381B5E6C37007EDC3D /* SwiftImage.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		835385391B5E6C37007EDC3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8353853E1B5E6C37007EDC3D /* SwiftImage.framework */,
+				835385401B5E6C37007EDC3D /* SwiftImageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -128,6 +219,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				83F62CB01B5F9F8F0013E410 /* PBXTargetDependency */,
 			);
 			name = SwiftVision;
 			productName = SwiftVision;
@@ -158,7 +250,8 @@
 		831F36551B5B936B00109C68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Chris Hatton";
 				TargetAttributes = {
 					831F365D1B5B936C00109C68 = {
@@ -179,6 +272,12 @@
 			mainGroup = 831F36541B5B936B00109C68;
 			productRefGroup = 831F365F1B5B936C00109C68 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 835385391B5E6C37007EDC3D /* Products */;
+					ProjectRef = 835385381B5E6C37007EDC3D /* SwiftImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				831F365D1B5B936C00109C68 /* SwiftVision */,
@@ -186,6 +285,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8353853E1B5E6C37007EDC3D /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 8353853D1B5E6C37007EDC3D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		835385401B5E6C37007EDC3D /* SwiftImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftImageTests.xctest;
+			remoteRef = 8353853F1B5E6C37007EDC3D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		831F365C1B5B936C00109C68 /* Resources */ = {
@@ -209,6 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E126296431E49018AC9E037 /* FileImageSource.swift in Sources */,
+				3E1269F8FBB265D5B1E9111B /* CameraImageSource.swift in Sources */,
+				3E12625FD515CEAC58EDCA72 /* ImageSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +346,11 @@
 			isa = PBXTargetDependency;
 			target = 831F365D1B5B936C00109C68 /* SwiftVision */;
 			targetProxy = 831F366B1B5B936C00109C68 /* PBXContainerItemProxy */;
+		};
+		83F62CB01B5F9F8F0013E410 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftImage;
+			targetProxy = 83F62CAF1B5F9F8F0013E410 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -253,6 +377,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -330,6 +455,7 @@
 				INFOPLIST_FILE = SwiftVision/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.chrisHatton.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -345,6 +471,7 @@
 				INFOPLIST_FILE = SwiftVision/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.chrisHatton.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -363,6 +490,7 @@
 				);
 				INFOPLIST_FILE = SwiftVisionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.chrisHatton.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -376,6 +504,7 @@
 				);
 				INFOPLIST_FILE = SwiftVisionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.chrisHatton.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -399,6 +528,7 @@
 				831F36761B5B936C00109C68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		831F36771B5B936C00109C68 /* Build configuration list for PBXNativeTarget "SwiftVisionTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +537,7 @@
 				831F36791B5B936C00109C68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
