@@ -11,9 +11,9 @@ import CoreImage
 
 protocol ImageSource
 {
-    typealias ImageType
-    typealias ImageHandler = ( ImageType ) -> Void
+    associatedtype ImageType
+    associatedtype ImageHandler = ( ImageType ) -> Void
 
-    func start( handler:ImageHandler )
+    func start( _ handler:ImageHandler )
     func stop()
 }

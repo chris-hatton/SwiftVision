@@ -20,7 +20,7 @@ final class FileImageSource : ImageSource
         self.image = image
     }
     
-    func start(handler: (UIImage)->Void )
+    func start(_ handler: (UIImage)->Void )
     {
         handler( image )
     }

@@ -15,20 +15,20 @@ class CameraImageSource : ImageSource
     typealias ImageType = CVPixelBuffer
     
     let session : AVCaptureSession
-    let queue   : dispatch_queue_t
+    let queue   : DispatchQueue
     
     init()
     {
         self.session = AVCaptureSession()
-        self.queue   = dispatch_queue_create( "ImageProcessQueue", nil )
+        self.queue   = DispatchQueue( label: "ImageProcessQueue", attributes: [] )
     }
     
-    func start( handler: (CVPixelBuffer)->Void )
+    func start( _ handler: (CVPixelBuffer)->Void )
     {
         session.sessionPreset = AVCaptureSessionPresetMedium
         
         let
-            device : AVCaptureDevice          = AVCaptureDevice.defaultDeviceWithMediaType( AVMediaTypeVideo ),
+            device : AVCaptureDevice          = AVCaptureDevice.defaultDevice( withMediaType: AVMediaTypeVideo ),
             input  : AVCaptureDeviceInput     = try! AVCaptureDeviceInput( device: device ),
             output : AVCaptureVideoDataOutput = AVCaptureVideoDataOutput()
         
@@ -44,7 +44,7 @@ class CameraImageSource : ImageSource
                 self.handler = handler
             }
             
-            @objc func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!)
+            @objc func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!)
             {
                 let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
                 
