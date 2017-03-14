@@ -23,7 +23,7 @@ class CameraImageSource : ImageSource
         self.queue   = DispatchQueue( label: "ImageProcessQueue", attributes: [] )
     }
     
-    func start( _ handler: (CVPixelBuffer)->Void )
+    func start( _ handler: @escaping (CVPixelBuffer)->Void )
     {
         session.sessionPreset = AVCaptureSessionPresetMedium
         
@@ -39,7 +39,7 @@ class CameraImageSource : ImageSource
         {
             let handler : (CVPixelBuffer)->Void
             
-            init( handler: (CVPixelBuffer)->Void )
+            init( handler: @escaping (CVPixelBuffer)->Void )
             {
                 self.handler = handler
             }
